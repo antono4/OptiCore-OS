@@ -1,0 +1,81 @@
+Windows Registry Editor Version 5.00
+
+; OptiCore OS - Storage Registry Tweaks
+; Version: 1.0.0
+; Category: Storage Optimization
+
+; ========== STORAGE SENSE ==========
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy]
+"StorageSenseStatus"=dword:00000001
+"UserStorageSignalPeriod"=dword:00000000
+
+; ========== DISK CLEANUP ==========
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches]
+"ActiveSetupTempFolders"=dword:00000001
+"Downloaded Program Files"=dword:00000001
+"Internet Cache Files"=dword:00000001
+"Old ChkDsk Files"=dword:00000001
+"Previous Installations"=dword:00000001
+"Recycle Bin"=dword:00000001
+"Setup Log Files"=dword:00000001
+"Temporary Files"=dword:00000001
+"Temporary Setup Files"=dword:00000001
+"Update Cleanup"=dword:00000001
+"Windows Error Reporting Archive Files"=dword:00000001
+"Windows Error Reporting Queue Files"=dword:00000001
+"Windows Upgrade Log Files"=dword:00000001
+
+; ========== DISK DEFRAGMENTATION ==========
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Dfrg\BootOptimizeFunction]
+"Enable"=dword:00000001
+"TargetLocalPath"="C:\\"
+
+; ========== SUPERFETCH ==========
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
+"EnablePrefetcher"=dword:00000003
+"EnableSuperfetch"=dword:00000003
+"SfAggressiveBoot"=dword:00000001
+"SfAggressiveShutdown"=dword:00000000
+
+; ========== DISK I/O ==========
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"DisablePagingExecutive"=dword:00000001
+"LargeSystemCache"=dword:00000001
+
+; ========== FILE SYSTEM ==========
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisableLastAccessUpdate"=dword:00000001
+"NtfsDisable8dot3NameCreation"=dword:00000001
+"NtfsMftZoneReservation"=dword:00000001
+
+; ========== DISK TIMEOUT ==========
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Disk]
+"TimeOutValue"=dword:000000c8
+
+; ========== BOOT OPTIMIZATION ==========
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000001
+
+; ========== COMPRESS OLD FILES ==========
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\EnforcePHCPolicy]
+"DefaultBlockStoragePolicy"=dword:00000001
+
+; ========== STORAGE HEALTH ==========
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\storsvc]
+"Start"=dword:00000002
+
+; ========== INDEXING ==========
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Search]
+"BackgroundCopyFiles"=dword:00000001
+
+; ========== DEFRAG SCHEDULE ==========
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Defragment]
+"ScheduledDefrag"=dword:00000000
+
+; ========== DISK CACHE ==========
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Disk]
+"IoPriority"=dword:00000002
+
+; ========== BUFFER FLUSHING ==========
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System]
+"IoPageLockLimit"=dword:01000000
