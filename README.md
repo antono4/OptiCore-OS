@@ -6,7 +6,7 @@
 ![Version](https://img.shields.io/badge/Version-1.0.0-green)
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-blue)
 
-> OptiCore OS is an open-source Windows optimization project that goes beyond Atlas-OS, providing more aggressive performance tweaks, enhanced security, and refined user experience.
+> OptiCore OS is an open-source Windows optimization project that goes , providing more aggressive performance tweaks, enhanced security, and refined user experience.
 
 ## 🌟 Features
 
