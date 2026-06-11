@@ -210,7 +210,7 @@ This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) 
 
 ## 🙏 Acknowledgments
 
-- **Atlas-OS** - For inspiration and foundation
+- **Windows Optimization** - Custom optimizations
 - **AME Wizard** - For the playbook system
 - **Windows optimization community** - For research and development
 
