@@ -48,7 +48,7 @@ This will create `OptiCoreOS.playbook` in the playbook directory.
 1. Run AME Wizard
 2. Click "Load Playbook"
 3. Select `OptiCoreOS.playbook`
-4. Enter password: `opticore`
+4. Enter password: `malte`
 5. Click "Apply"
 6. Wait for completion (10-30 minutes)
 7. Reboot when prompted

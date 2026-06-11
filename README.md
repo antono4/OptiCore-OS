@@ -77,7 +77,7 @@
    2. Run AME Wizard.exe
    3. Click "Load Playbook"
    4. Select OptiCoreOS.playbook
-   5. Enter password: opticore
+   5. Enter password: malte
    6. Click "Apply"
    ```
 
