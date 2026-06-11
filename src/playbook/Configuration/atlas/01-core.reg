@@ -1,0 +1,67 @@
+; ==========================================
+; OptiCore OS - Core System Optimizations
+; ==========================================
+; Version: 1.0.0
+; Category: Essential
+
+Windows Registry Editor Version 5.00
+
+; ========== SYSTEM PERFORMANCE ==========
+
+; Disable NTFS Compression
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000000
+
+; Optimize Disk Performance
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"DisablePagingExecutive"=dword:00000001
+"LargeSystemCache"=dword:00000001
+"ClearPageFileAtShutdown"=dword:00000000
+
+; Optimize Pagefile
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"ConfigurablePages"=dword:00000080
+
+; ========== NETWORK PERFORMANCE ==========
+
+; TCP Optimizations
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
+"TcpAckFrequency"=dword:00000001
+"TCPNoDelay"=dword:00000001
+"TcpTimedWaitDelay"=dword:0000001e
+
+; Network Throttling Index
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"SystemResponsiveness"=dword:00000000
+"NetworkThrottlingIndex"=dword:ffffffff
+
+; ========== VISUAL EFFECTS ==========
+
+; Disable Visual Effects
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualSettings]
+"DisableAnimation"=dword:00000001
+
+; Reduce Animation
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"UserPreferencesMask"=hex:90,12,03,80
+"DragFullWindows"=dword:00000000
+
+; ========== POWER MANAGEMENT ==========
+
+; High Performance Power Plan
+[HKEY_CURRENT_USER\Control Panel\PowerCfg]
+"CurrentPowerPlan"=dword:00000000
+
+; ========== SYSMAIN SERVICE ==========
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SysMain]
+"Start"=dword:00000003
+"Type"=dword:00000001
+
+; ========== GAME MODE ==========
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GameBar]
+"AutoGameModeEnabled"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\GameBar]
+"AutoGameModeEnabled"=dword:00000001

@@ -1,0 +1,79 @@
+; ==========================================
+; OptiCore OS - Security Hardening
+; ==========================================
+; Version: 1.0.0
+; Category: Security
+
+Windows Registry Editor Version 5.00
+
+; ========== WINDOWS DEFENDER ==========
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender]
+"DisableAntiSpyware"=dword:00000000
+"PseudoAuditMode"=dword:00000000
+
+; Real-time Protection
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection]
+"DisableRealtimeMonitoring"=dword:00000000
+"DisableIOAVProtection"=dword:00000000
+"DisableScriptScanning"=dword:00000000
+
+; ========== SMARTSCREEN ==========
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"SmartScreenEnabled"="WarnAndPreventDefault"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer]
+"SmartScreenEnabled"="WarnAndPreventDefault"
+
+; ========== UAC ==========
+
+; Enable UAC
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"EnableLUA"=dword:00000001
+"PromptOnSecureDesktop"=dword:00000001
+"ConsentPromptBehaviorAdmin"=dword:00000002
+"FilterAdministratorToken"=dword:00000001
+
+; ========== FIREWALL ==========
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\StandardProfile]
+"EnableFirewall"=dword:00000001
+"DoNotAllowExceptions"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile]
+"EnableFirewall"=dword:00000001
+
+; ========== NETWORK SECURITY ==========
+
+; SMB Compression
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mrxsmb10\Parameters]
+"DisableCompression"=dword:00000001
+
+; Lanman Server
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
+"SMB1"=dword:00000000
+"SMB2"=dword:00000001
+
+; ========== EXPLOIT PROTECTION ==========
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\OptionalEditor]
+"SecurityLevel"=dword:00000001
+
+; ========== BITLOCKER ==========
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\BitLockerManagement]
+"PreventDeviceEncryption"=dword:00000000
+
+; ========== WINDOWS UPDATE ==========
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"ExcludeWUDriversInQualityUpdate"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\QualityCompat]
+"cd502000"=dword:00000000
+
+; ========== SECURE BOOT ==========
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecureBoot]
+"Enabled"=dword:00000001

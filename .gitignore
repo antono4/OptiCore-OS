@@ -1,0 +1,5 @@
+OptiCoreOS/
+*.playbook
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,90 @@
+; ==========================================
+; OptiCore OS - Performance Optimizations
+; ==========================================
+; Version: 1.0.0
+; Category: Performance
+
+Windows Registry Editor Version 5.00
+
+; ========== GAME MODE ==========
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\GameMode]
+"GameModeEnabled"=dword:00000001
+"UseGenericGameModeSetting"=dword:00000000
+
+; ========== PROCESSOR SCHEDULER ==========
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Priority Control]
+"ForegroundBoost"=dword:00000000
+
+; ========== DISK OPTIMIZATION ==========
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Disk]
+"EnableWriteCache"=dword:00000001
+"IoPriority"=dword:00000001
+
+; ========== NETWORK LATENCY ==========
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"Latency"=dword:00000001
+"GpuPriority"=dword:00000018
+"NetworkPriority"=dword:00000000
+
+; ========== TIMER RESOLUTION ==========
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules]
+"TimerResolution"=dword:00000001
+
+; ========== DESKTOP WINDOW MANAGER ==========
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
+"AlwaysCombines"=dword:00000000
+"DragFullWindows"=dword:00000000
+
+; ========== GAME DVR ==========
+
+[HKEY_CURRENT_USER\System\GameConfigStore]
+"GameDVR_Enabled"=dword:00000000
+"GameDVR_FSEBehaviorMode"=dword:00000002
+
+; ========== AUToplay ==========
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers]
+"DisableAutoplay"=dword:00000001
+
+; ========== THUMBNAILS ==========
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"DisableThumbnails"=dword:00000001
+
+; ========== PREFETCH ==========
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
+"EnablePrefetcher"=dword:00000003
+"EnableSuperfetch"=dword:00000001
+
+; ========== BOOT OPTIMIZATION ==========
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ Serialize]
+"StartupDelayInMS"=dword:00000000
+
+; ========== SERVICE OPTIMIZATION ==========
+
+; SysMain (Superfetch)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SysMain]
+"Start"=dword:00000002
+"Parameters"=dword:00000001
+
+; Windows Update Delivery Optimization
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config]
+"DODownloadMode"=dword:00000000
+
+; ========== MSI MODE ==========
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MSI Mode\Simplified]
+"InterruptSteering"=dword:00000001
+
+; ========== POWER THROTTLING ==========
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
+"PowerThrottlingOff"=dword:00000000

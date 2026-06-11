@@ -1,0 +1,263 @@
+# ==========================================
+# OptiCore OS - Tweaks Configuration
+# ==========================================
+# Version: 1.0.0
+# Description: Main tweaks configuration file
+
+version: "1.0.0"
+category: "tweaks"
+
+# ========== TWEAKS LIST ==========
+
+tweaks:
+  - id: "core_001"
+    name: "System Performance"
+    description: "Optimize system performance settings"
+    category: "performance"
+    enabled: true
+    scripts:
+      - "atlas/01-core.reg"
+      - "atlas/04-performance.reg"
+    executables:
+      - "Executables/optimize-core.ps1"
+    reboot_required: true
+
+  - id: "privacy_001"
+    name: "Privacy Enhancement"
+    description: "Disable telemetry and tracking"
+    category: "privacy"
+    enabled: true
+    scripts:
+      - "atlas/02-privacy.reg"
+    executables:
+      - "Executables/optimize-privacy.ps1"
+    reboot_required: true
+
+  - id: "security_001"
+    name: "Security Hardening"
+    description: "Enable maximum security settings"
+    category: "security"
+    enabled: true
+    scripts:
+      - "atlas/03-security.reg"
+    executables:
+      - "Executables/optimize-security.ps1"
+    reboot_required: true
+
+# ========== PERFORMANCE TWEAKS ==========
+
+  - id: "perf_001"
+    name: "Network Latency"
+    description: "Reduce network latency for gaming"
+    category: "performance"
+    enabled: true
+    registry_keys:
+      - path: "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile"
+        name: "Latency"
+        value: 1
+        type: "DWord"
+
+  - id: "perf_002"
+    name: "Game Mode"
+    description: "Enable Game Mode for better gaming performance"
+    category: "performance"
+    enabled: true
+    registry_keys:
+      - path: "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\GameMode"
+        name: "GameModeEnabled"
+        value: 1
+        type: "DWord"
+
+  - id: "perf_003"
+    name: "Disable Game DVR"
+    description: "Disable Game DVR to free resources"
+    category: "performance"
+    enabled: true
+    registry_keys:
+      - path: "HKCU:\System\GameConfigStore"
+        name: "GameDVR_Enabled"
+        value: 0
+        type: "DWord"
+
+  - id: "perf_004"
+    name: "TCP Optimization"
+    description: "Optimize TCP settings for lower latency"
+    category: "performance"
+    enabled: true
+    registry_keys:
+      - path: "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters"
+        name: "TcpAckFrequency"
+        value: 1
+        type: "DWord"
+      - path: "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters"
+        name: "TCPNoDelay"
+        value: 1
+        type: "DWord"
+
+  - id: "perf_005"
+    name: "Prefetch Optimization"
+    description: "Optimize prefetch for faster boot"
+    category: "performance"
+    enabled: true
+    registry_keys:
+      - path: "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters"
+        name: "EnablePrefetcher"
+        value: 3
+        type: "DWord"
+
+# ========== PRIVACY TWEAKS ==========
+
+  - id: "priv_001"
+    name: "Disable Advertising ID"
+    description: "Turn off Windows advertising ID"
+    category: "privacy"
+    enabled: true
+    registry_keys:
+      - path: "HKCU:\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo"
+        name: "Enabled"
+        value: 0
+        type: "DWord"
+
+  - id: "priv_002"
+    name: "Disable Cortana"
+    description: "Disable Cortana voice assistant"
+    category: "privacy"
+    enabled: true
+    registry_keys:
+      - path: "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
+        name: "AllowCortana"
+        value: 0
+        type: "DWord"
+
+  - id: "priv_003"
+    name: "Disable Location"
+    description: "Disable Windows location tracking"
+    category: "privacy"
+    enabled: true
+    registry_keys:
+      - path: "HKLM:\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location"
+        name: "Value"
+        value: "Deny"
+        type: "String"
+
+  - id: "priv_004"
+    name: "Disable Activity History"
+    description: "Prevent activity history syncing"
+    category: "privacy"
+    enabled: true
+    registry_keys:
+      - path: "HKLM:\Software\Policies\Microsoft\Windows\System"
+        name: "PublishUserActivities"
+        value: 0
+        type: "DWord"
+
+  - id: "priv_005"
+    name: "Block Telemetry Hosts"
+    description: "Block telemetry domains in hosts file"
+    category: "privacy"
+    enabled: true
+    hosts_entries:
+      - "127.0.0.1 vortex.data.microsoft.com"
+      - "127.0.0.1 settings-win.data.microsoft.com"
+      - "127.0.0.1 watson.telemetry.microsoft.com"
+      - "127.0.0.1 telemetry.microsoft.com"
+
+# ========== SECURITY TWEAKS ==========
+
+  - id: "sec_001"
+    name: "Enable SmartScreen"
+    description: "Enable Windows SmartScreen protection"
+    category: "security"
+    enabled: true
+    registry_keys:
+      - path: "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer"
+        name: "SmartScreenEnabled"
+        value: "WarnAndPreventDefault"
+        type: "String"
+
+  - id: "sec_002"
+    name: "Maximum UAC"
+    description: "Configure UAC to maximum security"
+    category: "security"
+    enabled: true
+    registry_keys:
+      - path: "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
+        name: "EnableLUA"
+        value: 1
+        type: "DWord"
+      - path: "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
+        name: "PromptOnSecureDesktop"
+        value: 1
+        type: "DWord"
+
+  - id: "sec_003"
+    name: "Disable SMBv1"
+    description: "Disable SMBv1 protocol for security"
+    category: "security"
+    enabled: true
+    registry_keys:
+      - path: "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters"
+        name: "SMB1"
+        value: 0
+        type: "DWord"
+
+# ========== USABILITY TWEAKS ==========
+
+  - id: "usab_001"
+    name: "Disable Visual Effects"
+    description: "Disable animations for faster UI"
+    category: "usability"
+    enabled: true
+    registry_keys:
+      - path: "HKCU:\Control Panel\Desktop"
+        name: "DragFullWindows"
+        value: 0
+        type: "DWord"
+
+  - id: "usab_002"
+    name: "Disable AutoPlay"
+    description: "Disable autoplay for media devices"
+    category: "usability"
+    enabled: true
+    registry_keys:
+      - path: "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers"
+        name: "DisableAutoplay"
+        value: 1
+        type: "DWord"
+
+  - id: "usab_003"
+    name: "Disable Thumbnails"
+    description: "Disable thumbnail caching"
+    category: "usability"
+    enabled: true
+    registry_keys:
+      - path: "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer"
+        name: "DisableThumbnails"
+        value: 1
+        type: "DWord"
+
+# ========== POWER TWEAKS ==========
+
+  - id: "power_001"
+    name: "High Performance Power Plan"
+    description: "Set power plan to High Performance"
+    category: "power"
+    enabled: true
+    commands:
+      - "powercfg /setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c"
+
+  - id: "power_002"
+    name: "Disable Hibernate"
+    description: "Disable hibernation to save disk space"
+    category: "power"
+    enabled: true
+    commands:
+      - "powercfg /hibernate off"
+
+# ========== NOTES ==========
+
+notes:
+  - "All tweaks require administrator privileges"
+  - "Some changes require system reboot to take effect"
+  - "Backup registry before applying major changes"
+  - "Test in VM before applying to production system"
