@@ -1,12 +1,13 @@
 # 🏆 OptiCore OS
 
 **Premium Windows Optimization 
+**Premium Windows Optimization**
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![Version](https://img.shields.io/badge/Version-1.0.0-green)
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-blue)
 
-> OptiCore OS is an open-source Windows optimization project that goes beyond Atlas-OS, providing more aggressive performance tweaks, enhanced security, and refined user experience.
+> OptiCore OS is an open-source Windows optimization project that provides aggressive performance tweaks, enhanced security, and refined user experience.
 
 ## 🌟 Features
 

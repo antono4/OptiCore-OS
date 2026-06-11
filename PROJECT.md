@@ -2,9 +2,9 @@
 
 ## Konsep & Visi
 
-**OptiCore OS** adalah modifikasi Windows premium yang melampaui Atlas-OS dengan optimasi lebih agresif, fitur keamanan lebih kuat, dan pengalaman pengguna yang lebih refined.
+**OptiCore OS** adalah modifikasi Windows premium dengan optimasi lebih agresif, fitur keamanan lebih kuat, dan pengalaman pengguna yang lebih refined.
 
-### Diferensiasi dari Atlas-OS:
+### Fitur Utama:
 1. **Optimasi Lebih Agresif** - Tweaks yang lebih ekstrem untuk performance maximum
 2. **Keamanan Lebih Ketat** - Privacy policies lebih comprehensive
 3. **UI/UX Enhancement** - Visual improvements dan quality-of-life features
