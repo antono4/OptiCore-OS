@@ -40,7 +40,7 @@ jobs:
         foreach ($reg in $regFiles) {
             Write-Host "Validating: $($reg.Name)"
             $content = Get-Content $reg.FullName -Raw
-            if ($content -notmatch "^Windows Registry Editor Version") {
+            if ($content -notmatch "Windows Registry Editor Version") {
                 Write-Host "Invalid registry format: $($reg.Name)" -ForegroundColor Red
                 exit 1
             }
