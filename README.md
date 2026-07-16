@@ -1,5 +1,8 @@
 # 🏆 OptiCore OS
 
+> **Created by Antono**
+
+
 <p align="center">
   <img src="docs/images/logo.png" alt="OptiCore OS" width="180">
 </p>
